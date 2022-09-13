@@ -15,7 +15,6 @@ const mockUpStrand = () => {
   return newStrand
 }
 
-let survivors = [];
 //create object factory function
 let pAequorFactory = (num, bases) => {
   return {
@@ -35,7 +34,8 @@ let pAequorFactory = (num, bases) => {
       /* I wrote this switch statement to verify that the new base being added was not the same as the old base (i.e. replacing a base 'E' with another 'E')*/
       //check if the base being mutated is the same as the new base
       switch (mutated === newBase) {
-        /* if they are the same, remove the base from the 'dnaBases' array so it cannot be chosen again, then pick from the remaining bases and assign it to variable 'newBase2'. 'newBase2' is then spliced into the dnaStrand array */
+        /* if they are the same, remove the base from the 'dnaBases' array so it cannot be chosen again, then pick from the remaining bases and assign it 
+        to variable 'newBase2'. 'newBase2' is then spliced into the dnaStrand array */
         case true:
           dnaBases.splice(dnaStrand.indexOf(newBase), 1);
           newBase2 = dnaBases[Math.floor(Math.random() * 3)];
@@ -80,6 +80,9 @@ let pAequorFactory = (num, bases) => {
     },
   }
 }
+
+//create empty array for the results of do30Times
+let survivors = [];
 
 let do30Times = () => {
   let i = 0;
