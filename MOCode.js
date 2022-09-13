@@ -59,7 +59,7 @@ let pAequorFactory = (num, bases) => {
           }
         }
       }
-      console.log('this specimen and that specimen have ' + sameDna / 15 * 10 + '% DNA in common');
+      console.log('this specimen and that specimen have ' + (sameDna / 15) * 100 + '% DNA in common');
     },
     
     willLikelySurvive: function () {
